@@ -1,6 +1,15 @@
 # 10a. create class for Owner
 # 10b. initialize with name and email
 # 10c. demo one-way assn by init with pets []
+class Owner:
+
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+        self.pets = []
+
+    def __repr__(self):
+        return f'<Owner: {self.name} {self.email}>'
 # 19. remove pets property on refactor to two-way assn
 
 # (11 goto debug.py)

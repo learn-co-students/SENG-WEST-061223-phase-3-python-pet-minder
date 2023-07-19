@@ -2,9 +2,15 @@
 # Class Attributes and Methods 
 
 class Pet:
+    # 4✅. Define a class attribute total_pets and set it to 0
+        # Demonstrate the class attribute using debug.py
+    total_pets = 0
 
     # 6✅. Create a class method increase_pets that will increment total_pets
         # replace Pet.total_pets += 1 in __init__ with increase_pets()
+    @classmethod
+    def increase_pets(cls, increment=1):
+        cls.total_pets += increment
 
     # 15. add cls var all[] to keep all pet instances in memory (SSOT)
     
@@ -15,6 +21,11 @@ class Pet:
         self.breed = breed
         self.temperament = temperament
         self.image_url = image_url
+        # 5✅. Update the class attribute whenever an instance is initialized
+        # Pet.total_pets += 1
+        # Demonstrate total_pets updating with each instance 
+        self.increase_pets()
+
         # 24a. add protected _handlers=[]
         # 24d. iterate through handlers on init and use add_handler to populate _handlers
         # (25 goto handler.py)
