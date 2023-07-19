@@ -15,7 +15,7 @@
 | 1. (00/00/00) Python Fundamentals     |  [Notes](#)     |  [Video](#)      |    [Starter](#)     |   [Solution](#)       |
 | 2. (00/00/00) Python Data Structures     |  [Notes](#)     |   [Video](#)     |    [Starter](#)     |    [Solution](#)        |
 | 3. (00/00/00) Object Oriented Programming in Python     |  [Notes](#)     |  [Video](#)      |   [Starter](#)      |    [Solution](#)      |
-| 4. (00/00/00) OOP 2: Class Methods & Class Variables     |   [Notes](#)    |   [Video](#)     |   [Starter](#)      |  [Solution](#)        |
+| 4. (00/00/00) OOP 2: Class Methods, Class Variables, & Object Relationships     |   [Notes](#)    |   [Video](#)     |   [Starter](#)      |  [Solution](#)        |
 | 5. (00/00/00) SQL Fundamentals & Table Relations     |  [Notes](#)     |   [Video](#)     |   [Starter](#)      |   [Solution](#)         |
 | 6. (00/00/00) Object-Relational Mapping     |   [Notes](#)    |   [Video](#)     |    [Starter](#)     |   [Solution](#)       |
 | 7. (00/00/00) SQLAlchemy & Alembic     |   [Notes](#)    |    [Video](#)    |   [Starter](#)      |    [Solution](#)      |
@@ -145,7 +145,7 @@
 - Stretch Topics
     - Object Properties
 
-## 4: OOP 2: Class Methods & Class Variables
+## 4: OOP 2: Class Methods, Class Variables, & Object Relationships
 ### Lecture Goals:
 - Demonstrate Decorators 
     - `@decorator`  
@@ -159,6 +159,18 @@
 - Object Inheritance
 - Stretch Goals
     - Super
+
+- Build one-to-many relationships between objects
+    - Define one-to-many relationships
+    - Discuss their importance and use
+    - Emphasize single-source-of-truth
+    - Demonstrate building one-way and two-way relationships
+- Build many-to-many relationships between objects
+    - Define many-to-many relationships
+    - Discuss their importance and use
+    - Demonstrate building the relationship with and without intermediary class
+- Aggregate Methods
+    - Write aggregate methods to collect data about objects using their related objects
 
 ### Lecture Topics:
 - Decorators
