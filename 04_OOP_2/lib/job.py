@@ -20,6 +20,3 @@ class Job:
 
 # (43 goto pet.py)
 
-# 45. implement pet.total_billing for one of the pets
-
-# 46. implement Pet.oldest_pet() on the Pet class

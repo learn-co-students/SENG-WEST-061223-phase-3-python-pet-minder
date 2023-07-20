@@ -89,11 +89,12 @@ class Pet:
         return f"${sum([job.fee() for job in self.bookings()]):.2f}"
 
     # 44. create a class aggregate method oldest_pet which will return the oldest pet instance
+    @classmethod
+    def oldest_pet(cls):
+        sorted_pets = sorted(cls.all, key=lambda pet: pet.age, reverse=True)
+        return sorted_pets[0]
     
-
-    # (45 goto debug.py)
- 
-    
+    # (45 run debug.py and demo)
 
     def print_pet_details(self):
         print(f'''
