@@ -141,3 +141,54 @@ pip install -r requirements.txt
 </div>
 
 ---
+
+### The Virtual Environment 🌲
+
+#### Pyenv
+
+Pyenv is the tool we'll use to install and manage different versions of Python.
+
+- `pyenv versions` will show you what Python versions are currently installed on your machine
+- `pyenv install -l` will show a list of versions available to install
+- `pyenv install 3.9.2` will install that version on your machine
+- `pyenv global 3.9.2` will set that as the global version on your machine
+
+---
+
+#### Pipenv
+
+<p style="font-size: 1.7rem">Pipenv is a tool built upon <code>pip</code> which can create virtual environments and install packages in them.</p>
+
+<div style="font-size: 1.5rem">
+
+- `Pipfile`: look for this first, it is analogous to npm's package.json file and lists the dependencies and Python version for the current project
+- `Pipfile.lock`: similar to package-lock.json, this file describes both the Pipfile dependencies AND their dependencies with exact versions
+
+If the project directory doesn't have these, you need to create a virtual environment
+
+<pre style="font-size: 1.7rem"><code>pipenv --python 3.8.13</code></pre>
+
+Now you can start adding dependencies similarly to how you would install packages with `pip`:
+
+<pre style="font-size: 1.7rem"><code>pipenv install requests</code></pre>
+
+</div>
+
+xxx
+
+<div style="font-size: 1.5rem">
+
+| Command          | Description                                               |
+| ---------------- | --------------------------------------------------------- |
+| `pipenv install` | creates the virtual environment and installs dependencies |
+| `pipenv shell`   | activates the virtual environment                         |
+| `ctrl + d`       | deactivates the virtual environment                       |
+| `pipenv -rm`     | removes the virtual environment                           |
+
+</div>
+
+---
+
+## Let's dive into the code! 🤿
+
+---
