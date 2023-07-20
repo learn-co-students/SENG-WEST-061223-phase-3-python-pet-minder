@@ -3,13 +3,11 @@
     # Introduction to Object Oriented programming, classes, instances, methods
 
 # Importing the pet class 
-# from lib.pet import * // now causing circular import
-# from lib.pet import *
+# from lib.pet import * // later will cause circular import
 # from lib.cat import *
+# 11. setup config.py to solve some circular import issues
 from lib.config import *
-# 11. import owner class
-# from lib.owner import *
-# from lib.config import Cat, Owner
+
 
 # Instances of the pet classes
 rose = Pet('rose', 11, 'domestic longhair', 'sweet', 'rose.jpg')

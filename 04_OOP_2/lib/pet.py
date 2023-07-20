@@ -53,7 +53,7 @@ class Pet:
     # 18. create setter for owner property
     @owner.setter
     def owner(self, value):
-        # if not isinstance(value, Owner):
+        # if not isinstance(value, Owner):  # need to solve circular import to do this
         #     raise TypeError("Owner must be an instance of Owner class")
         self._owner = value
 
