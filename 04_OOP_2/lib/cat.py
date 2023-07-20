@@ -1,7 +1,7 @@
 #6✅. Create a subclass of Pet called Cat
     # import Pet from lib.pet
     # Update the instance in debug.py to rose = Cat('rose', 11, 'domestic longhair', 'sweet', 'rose.jpg', True)
-from lib.pet import Pet
+from lib.pet import *
 class Cat(Pet):
 #8✅. Create __init__ that takes all the parameters from Pet and a parameter called indoor 
     # Use super to pass the Pet parameters to the super class
