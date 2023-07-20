@@ -5,7 +5,7 @@
 # Importing the pet class 
 from lib.pet import *
 from lib.cat import *
-# 11. import owner class
+# 11. import owner class on config.py and import config.py here (circular imports)
 
 # Instances of the pet classes
 rose = Pet('rose', 11, 'domestic longhair', 'sweet', 'rose.jpg', True)
