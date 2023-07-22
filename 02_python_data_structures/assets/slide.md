@@ -43,7 +43,7 @@ xxx
 - mutable
 
 <pre>
-  <code>
+  <code class="language-python">
   my_list = ["hello", "world", 42, ["another", "list"]]
   </code>
 </pre>
@@ -69,7 +69,7 @@ xxx
 - **_immutable_**
 
 <pre>
-  <code>
+  <code class="language-python">
     my_tuple = (4, 2, "Miyuki", True)
   </code>
 </pre>
@@ -77,6 +77,108 @@ xxx
 
 ---
 
+<img src="./Python-range-function-explained.webp" />
+<pre>
+  <code class="language-python">
+    for num in range(8):
+      print(f"The count is {num}")
+  </code>
+</pre>
+
+---
+
+<h3>Dictionaries 📖 Python's JSON</h3>
+
+<h5>Creating dictionaries:</h5>
+<pre>
+  <code class="language-python">
+    cat_1 = {
+      'name': 'Simon',
+      'color': 'ginger',
+      'age': 10
+    }
+  </code>
+  <code class="language-python">
+    cat_2 = dict(name='Miyuki', color='grey', age=10)
+  </code>
+</pre>
+
+---
+
+<h5>Reading and adding values 👓</h5>
+
+<pre><code class="language-python" data-line-numbers="1-5|6-7|8-9|10-11|12-13">cat_1 = {
+      'name': 'Simon',
+      'color': 'ginger',
+      'age': 10
+}
+cat_1['color']
+# => ginger
+cat_1.get('age')
+# => 10
+cat_1.get('mood')
+# => None
+cat_1['mood'] = 'hungry'
+cat_1.setdefault('breed', 'Munchkin')
+</code></pre>
+
+<h6 class="fragment">Let's try it! 🚀</h6>
+
+---
+
+<h5>Updating and Deleting values 📝 ❌</h5>
+
+<pre><code class="language-python" data-line-numbers="1-6|7-10|11-14">cat_1 = {
+      'name': 'Simon',
+      'color': 'ginger',
+      'age': 10,
+      'mood': 'hungry'
+}
+cat_1['mood'] = 'sleepy'
+cat_1.update(age=11, mood='feisty')
+print(cat_1)
+# {'name': 'Simon', 'color': 'ginger', 'age': 11, 'mood': 'feisty'}
+del cat_1('age')
+cat_1.pop('mood')
+print(cat_1)
+# {'name': 'Simon', 'color': 'ginger'}
+</code></pre>
+
+<h6 class="fragment">Let's do it! 🛠️</h6>
+
+---
+
+<h5><code>For</code> loops: let me reiterate 🐈🐈🐈</h5>
+
+<img src="./for-loop-in-python.webp" />
+
+
+---
+
+#### `break` keyword 🔑
+
+<div style="font-size: 1.5rem">
+In a loop, the <code>break</code> keyword escapes the loop, regardless of the iteration number. Once <code>break</code> executes, the program will continue to execute after the loop.
+</div>
+
+
+```python
+numbers = [0, 254, 2, -1, 3]
+
+for num in numbers:
+  if (num < 0):
+    print("Negative number detected!")
+    break
+  print(num)
+  
+# 0
+# 254
+# 2
+# Negative number detected!
+
+```
+
+---
 
 <div style="display: flex;">
   <div style="width: 40%">
