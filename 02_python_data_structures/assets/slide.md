@@ -11,64 +11,72 @@ presentation:
 
 ---
 
-<h2>Python Fundamentals</h2>
+<h2>Python Data Structures 🏗️</h2>
 <img alt="python logo" src="./python-logo-only.png"/>
 
 ---
 
-<h2><strong> ✅ Objectives </strong></h2>
+<h3><strong> ✅ Objectives </strong></h3>
 
-- Review a brief history of Python
-- Use 'pip' to manage Python packages
-- Debug Python code with `shell`, `print`, and `ipdb`
-- Review common Python data types
-- Understand Python conditionals and control flow
-- Write Python functions
+- Review the Sequence types: `list`, `tuple`, `range` (and `str`)
+  - Lists: understand CRUD operations with list values
+  - Tuples: 
+      - Discuss: `mutable` vs `immutable`
+      - Create and access values in tuples
  
 xxx
 
-- Review Python variable scope and the `global` keyword
-- Read Python error messages and exceptions
-- Handle errors with `try:` and `except:`
+  - Ranges: and how they're useful in loops
+  - Learn about Set types (time permitting)
+- Dictionaries:
+  - a mapping data structure
+  - know all CRUD operations
+- Loops: create `for` and `while` loops with sequences
+- Use list comprehensions to emulate JS `map`, `filter` and `find` functions
 
 ---
 
-<h2>What is Python ❓</h2>
+<h3>List... array's Pythonic twin?</h3>
 
-- interpreted scripting language
-- object-oriented
-- dynamically typed
-- supports modules and packages
-- extensive standard library
-- emphasis on readability
+- ordered collection of elements
+- aka sequence
+- mutable
+
+<pre>
+  <code>
+  my_list = ["hello", "world", 42, ["another", "list"]]
+  </code>
+</pre>
 
 ---
 
-<h3>A little history... 📚</h3>
-
-<div style="display: flex;">
-  <div style="width: 35%; height: 100%">
-    <img src="./guidovr.jpg">
+<div style="display: flex; flex-direction: column;">
+  <div>
+    <img src="./Built-in-List-Functions-in-Python-01.jpg">
   </div>
 
-  <div style="font-size: 1.5rem; margin: 0.85rem 1rem; width: 65%; height: 100%">
-  
-- Who: Guido van Rossum
-- When: February 20, 1991
-- Eponym: Monty Python's Flying Circus
-
-    <p>Began as a personal project based on another language he wrote called ABC with the intention of making it easier to read and program in C.</p>
-
-    _Python is an experiment in how much freedom programmers need. Too much freedom and nobody can read another's code; too little and expressiveness is endangered._
-
-   _-Guido van Rossum_
-
+  <div style="font-size: 1.5rem; margin: 0.85rem 1rem;">
+    Let's dive into the code! 🌊
   </div>
 </div>
 
 ---
 
-<h2>PyPi and Pip</h2>
+<h3>Tuples–when values are forever 💎</h3>
+
+- ordered collection of values
+- aka sequence
+- **_immutable_**
+
+<pre>
+  <code>
+    my_tuple = (4, 2, "Miyuki", True)
+  </code>
+</pre>
+
+
+---
+
 
 <div style="display: flex;">
   <div style="width: 40%">
