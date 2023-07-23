@@ -3,7 +3,7 @@ theme : "night"
 transition: "slide"
 highlightTheme: "monokai"
 slideNumber: false
-title: "P3L1 - Python Fundamentals"
+title: "P3L3 - Object-Oriented Programming in Python"
 verticalSeparator: 'xxx'
 presentation:
     width: 1500
@@ -11,7 +11,7 @@ presentation:
 
 ---
 
-<h2>Python Data Structures 🏗️</h2>
+<h2>Object-Oriented Programming in Python</h2>
 <img alt="python logo" src="./python-logo-only.png"/>
 
 ---
