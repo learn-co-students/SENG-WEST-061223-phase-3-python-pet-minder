@@ -180,125 +180,50 @@ for num in numbers:
 
 ---
 
-<div style="display: flex;">
-  <div style="width: 40%">
-    <h5>What do PyPi and Pip stand for?</h5>
-  </div>
-  <div style="font-size: 1.5rem; margin-top: 0.85rem; width: 60%">
-    <textarea style="font-size: 1.5rem; border: 2px solid black; padding: 1rem; width: 90%; background: #333; color: #eee" rows="5" cols="35"></textarea>    
-  </div>
-</div>
-
-<p>Let's install a popular package for sending HTTP requests</p>
-
-```python
-pip install requests
-```
-[PyPi](https://pypi.org/)
-
----
-
-To install a specific version:
-```python
-pip install requests==2.22.0
-```
-To uninstall a package:
-```python
-pip uninstall requests
-```
-
-When deploying, you will use pip to create a requirements file:
-```python
-pip install -r requirements.txt
-```
-
----
-
-### The Python Shell
-
-<img src="./py_shell.png" />
-
-- Python comes with a built in REPL.
-- Start a REPL by typing `python` at the command line.
-- Exit with `exit()` or `ctrl + d`
-
-##### Let's try it!
-
----
-
-### Python's Common Data Types
-
-<div style="font-size: 1.5rem" >
-
-| Example                       | Data Type | Name       |
-| ----------------------------- | --------- | ---------- |
-| `"Hello Python"`              | str       | string     |
-| `20`                          | int       | integer    |
-| `20.5`                        | float     | float      |
-| `[1, 2, 3]`                   | list      | list       |
-| `(1, 2, 3)`                   | tuple     | tuple      |
-| `{"name": "Mimi", "age": 10}` | dict      | dictionary |
-| `{2, 4, 6}`                   | set       | set        |
-| `True`                        | bool      | boolean    |
-| `None`                        | NoneType  | NoneType   |
-
-</div>
-
----
-
-<div style="display: in-line block">
-    <iframe src="https://www.classtools.net/dragdrop/202307_DS3M2K" style="position:relative;top:0;left:0;width:900px;height:650px;overflow:none;border:none"></iframe>
-</div>
-
----
-
-### The Virtual Environment 🌲
-
-#### Pyenv
-
-Pyenv is the tool we'll use to install and manage different versions of Python.
-
-- `pyenv versions` will show you what Python versions are currently installed on your machine
-- `pyenv install -l` will show a list of versions available to install
-- `pyenv install 3.9.2` will install that version on your machine
-- `pyenv global 3.9.2` will set that as the global version on your machine
-
----
-
-#### Pipenv
-
-<p style="font-size: 1.7rem">Pipenv is a tool built upon <code>pip</code> which can create virtual environments and install packages in them.</p>
+#### `continue` keyword 🔑
 
 <div style="font-size: 1.5rem">
-
-- `Pipfile`: look for this first, it is analogous to npm's package.json file and lists the dependencies and Python version for the current project
-- `Pipfile.lock`: similar to package-lock.json, this file describes both the Pipfile dependencies AND their dependencies with exact versions
-
-If the project directory doesn't have these, you need to create a virtual environment
-
-<pre style="font-size: 1.7rem"><code>pipenv --python 3.8.13</code></pre>
-
-Now you can start adding dependencies similarly to how you would install packages with `pip`:
-
-<pre style="font-size: 1.7rem"><code>pipenv install requests</code></pre>
-
+In Python, a <code>while</code> loop will repeatedly execute a code block as long as a condition evaluates to <code>True</code>.
 </div>
 
-xxx
+
+```python
+big_number_list = [1, 2, -1, 4, -5, 5, 2, -9]
+
+# Print only positive numbers:
+for i in big_number_list:
+  if i < 0:
+    continue
+  print(i)
+
+```
+
+---
+
+#### `while` loops 🔍
 
 <div style="font-size: 1.5rem">
-
-| Command          | Description                                               |
-| ---------------- | --------------------------------------------------------- |
-| `pipenv install` | creates the virtual environment and installs dependencies |
-| `pipenv shell`   | activates the virtual environment                         |
-| `ctrl + d`       | deactivates the virtual environment                       |
-| `pipenv -rm`     | removes the virtual environment                           |
-
+In Python, the <code>continue</code> keyword is used inside a loop to skip the remaining code inside the loop code block and begin the next loop iteration.
 </div>
 
+```python
+hunger = 5
+while hunger > 0:
+  print('munch!')
+  hunger -= 1 # be sure to progress your condition towards the base case!
+# this will print 'munch!' 5 times
+
+```
+
 ---
 
-## Let's dive into the code! 🤿
+#### List Comprehension 💡
+
+<div style="font-size: 1.5rem">
+List comprehension is a simpler method to create a list from an existing list. It is generally a list of iterables generated with an option to include only the items which satisfy a condition.
+</div>
+
+<img src="./list-comp-diagram.png" />
 
 ---
+
