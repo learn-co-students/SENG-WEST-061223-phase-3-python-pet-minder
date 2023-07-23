@@ -18,21 +18,18 @@ presentation:
 
 <h3><strong> ✅ Objectives </strong></h3>
 
-- Review the Sequence types: `list`, `tuple`, `range` (and `str`)
-  - Lists: understand CRUD operations with list values
-  - Tuples: 
-      - Discuss: `mutable` vs `immutable`
-      - Create and access values in tuples
- 
+* Define Object-Oriented Programming
+* Understand the benefits of OOP
+* Know the principles of OO Design
+* Build Classes
+* Create instances of those classes
+* Use `__init__` to instantiate objects with attribute values
+
 xxx
 
-  - Ranges: and how they're useful in loops
-  - Learn about Set types (time permitting)
-- Dictionaries:
-  - a mapping data structure
-  - know all CRUD operations
-- Loops: create `for` and `while` loops with sequences
-- Use list comprehensions to emulate JS `map`, `filter` and `find` functions
+* Add instance methods to our classes
+* Understand the use of the `self`` keyword in instances
+* Stretch: object properties, mass assignment
 
 ---
 
