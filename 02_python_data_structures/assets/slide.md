@@ -3,7 +3,7 @@ theme : "night"
 transition: "slide"
 highlightTheme: "monokai"
 slideNumber: false
-title: "P3L1 - Python Fundamentals"
+title: "P3L2 - Python Data Structures"
 verticalSeparator: 'xxx'
 presentation:
     width: 1500
