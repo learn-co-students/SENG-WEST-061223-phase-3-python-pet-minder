@@ -183,7 +183,7 @@ xxx
 | `pipenv install` | creates the virtual environment and installs dependencies |
 | `pipenv shell`   | activates the virtual environment                         |
 | `ctrl + d`       | deactivates the virtual environment                       |
-| `pipenv -rm`     | removes the virtual environment                           |
+| `pipenv --rm`     | removes the virtual environment                           |
 
 </div>
 
