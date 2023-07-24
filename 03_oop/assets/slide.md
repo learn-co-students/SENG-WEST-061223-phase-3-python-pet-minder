@@ -33,11 +33,43 @@ xxx
 
 ---
 
-<h3>List... array's Pythonic twin?</h3>
+<h3>What is OOP? 🤔</h3>
 
-- ordered collection of elements
-- aka sequence
-- mutable
+<div style="font-size: 1.8rem" >
+
+* a programming paradigm  
+* seeks to encapsulate information and it's related behaviors together as objects
+* models concepts and objects in the real world. 
+* easier to reason about and solve problems involving those data, 
+* facilitates structuring our programs in ways that can share and reuse these objects.
+* contrast to Procedural Programming, 
+  * written in sequential order and 
+  * procedures are called when behaviour needs to be shared between pages in an application.
+</div>
+
+---
+
+<img src="./OOPConcept.jpg" style="width: 900px">
+
+---
+
+
+<section data-background-color="mistyrose" >
+  <h3>Classes and Instances</h3>
+  <img src="./classes_instances.png" />
+</section>
+
+
+---
+
+### A Python Class is...
+
+* a blueprint or template for creating individual objects
+* a data structure which assigns values and methods to objects
+
+
+
+---
 
 <pre>
   <code class="language-python">
