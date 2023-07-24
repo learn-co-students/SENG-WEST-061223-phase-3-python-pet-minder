@@ -20,7 +20,6 @@ presentation:
 
 * Define Object-Oriented Programming
 * Understand the benefits of OOP
-* Know the principles of OO Design
 * Build Classes
 * Create instances of those classes
 * Use `__init__` to instantiate objects with attribute values
@@ -29,6 +28,7 @@ xxx
 
 * Add instance methods to our classes
 * Understand the use of the `self`` keyword in instances
+* Know the principles of OO Design
 * Stretch: object properties, mass assignment
 
 ---
@@ -46,6 +46,7 @@ xxx
   * written in sequential order and 
   * procedures are called when behaviour needs to be shared between pages in an application.
 </div>
+
 
 ---
 
@@ -67,17 +68,76 @@ xxx
 * a blueprint or template for creating individual objects
 * a data structure which assigns values and methods to objects
 
+<div style="display: flex;">
+  <div style="width: 35%; height: 100%">
+    <img src="./604px-CPT-OOP-objects_and_classes_-_attmeth.svg.png" />
+  </div>
+
+  <div style="width: 65%; height: 100%">
+    <img src="./OOP-là-gì-3.jpg" />
+  </div>
+</div>
+
+---
+
+### An object is...
+
+<div style="display: flex;">
+  <div style="font-size: 1.75rem; width: 50%">
+    <ul>
+      <li> an individual collection of variables (attributes), functions (methods), and data structures</li>
+      <li> constructed from a class</li>
+      <li> also called an 'instance'</li>
+      <li> a representation of a real world object or event</li>
+    </ul>
+  </div>
+
+  <div style="width: 50%">
+    <img src="./CookieCutter.png" />
+    
+  </div>
+</div>
 
 
 ---
 
+#### You actually already have some experience with classes and instances!
+
 <pre>
-  <code class="language-python">
-  my_list = ["hello", "world", 42, ["another", "list"]]
+  <code class="language-python" data-trim >
+    type("hello") # => < class 'str'>
+    42.__class__ # => < class 'int'>
   </code>
 </pre>
 
+<p>What happens when you enter <code>dir("world")</code> in a Python shell?</p>
+
+#### Let's build a class and some instances! 👷
+
 ---
+
+#### Some stregths of OOP
+
+
+#### Some weaknesses of OOP
+
+
+---
+
+#### Example Application Domains
+
+---
+
+#### OOP Design Principles
+
+---
+
+#### How will objects help us going forward? 🚗 
+
+---
+
+
+___
 
 <div style="display: flex; flex-direction: column;">
   <div>
