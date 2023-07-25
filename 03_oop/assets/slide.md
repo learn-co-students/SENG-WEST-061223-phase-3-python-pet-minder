@@ -116,15 +116,25 @@ xxx
 
 ---
 
-#### Some stregths of OOP
+#### Some strengths of OOP
 
+* having total control of what objects look like just by updating their class
 
 #### Some weaknesses of OOP
 
+* becuase my objects have to conform to a class, I lose flexibility in changing their attributes without changing the class
 
 ---
 
 #### Example Application Domains
+
+* healthcare {.fragment}
+* FinTech/banking {.fragment}
+* insurance {.fragment}
+* sales {.fragment}
+* eCommerce {.fragment}
+* accounting {.fragment}
+* booking software for hospitality and travel {.fragment}
 
 ---
 
