@@ -23,7 +23,7 @@ presentation:
   - Tuples: 
       - Discuss: `mutable` vs `immutable`
       - Create and access values in tuples
- 
+
 xxx
 
   - Ranges: and how they're useful in loops
