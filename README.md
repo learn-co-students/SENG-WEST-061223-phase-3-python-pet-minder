@@ -10,16 +10,16 @@
 - Create and present a project with a React frontend and a database-backed API backend
 
 
-| Lecture                                                                     |   Notes    | Videos     | Starter      | Solution      |
-| --------------------------------------------------------------------------- | :--------: | ---------- | ------------ | ------------- |
-| 1. (07/24/23) Python Fundamentals                                           | [Notes](#) | [Video](#) | [Starter](#) | [Solution](#) |
-| 2. (07/25/23) Python Data Structures                                        | [Notes](#) | [Video](#) | [Starter](#) | [Solution](#) |
-| 3. (07/26/23) Object Oriented Programming in Python                         | [Notes](#) | [Video](#) | [Starter](#) | [Solution](#) |
-| 4. (07/27/23) OOP 2: Class Methods, Class Variables, & Object Relationships | [Notes](#) | [Video](#) | [Starter](#) | [Solution](#) |
-| 5. (07/28/23) SQL Fundamentals & Table Relations                            | [Notes](#) | [Video](#) | [Starter](#) | [Solution](#) |
-| 6. (07/31/23) Object-Relational Mapping                                     | [Notes](#) | [Video](#) | [Starter](#) | [Solution](#) |
-| 7. (08/01/23) SQLAlchemy & Alembic                                          | [Notes](#) | [Video](#) | [Starter](#) | [Solution](#) |
-| 8. (08/04/23) SQLAlchemy Associations                                       | [Notes](#) | [Video](#) | [Starter](#) | [Solution](#) |
+| Lecture                                                                     | Videos     | Starter      | Solution      |
+| --------------------------------------------------------------------------- | ---------- | ------------ | ------------- |
+| 1. (07/24/23) Python Fundamentals                                           | [Video](https://www.youtube.com/watch?v=bQ1IKZ8VkrM) | [Starter](https://github.com/learn-co-students/SENG-WEST-061223-phase-3-python-pet-minder/tree/main/01_python_fundamentals) | [Solution](https://github.com/learn-co-students/SENG-WEST-061223-phase-3-python-pet-minder/tree/01_solution/01_python_fundamentals) |
+| 2. (07/25/23) Python Data Structures                                        | [Video](#) | [Starter](#) | [Solution](#) |
+| 3. (07/26/23) Object Oriented Programming in Python                         | [Video](#) | [Starter](#) | [Solution](#) |
+| 4. (07/27/23) OOP 2: Class Methods, Class Variables, & Object Relationships | [Video](#) | [Starter](#) | [Solution](#) |
+| 5. (07/28/23) SQL Fundamentals & Table Relations                            | [Video](#) | [Starter](#) | [Solution](#) |
+| 6. (07/31/23) Object-Relational Mapping                                     | [Video](#) | [Starter](#) | [Solution](#) |
+| 7. (08/01/23) SQLAlchemy & Alembic                                          | [Video](#) | [Starter](#) | [Solution](#) |
+| 8. (08/04/23) SQLAlchemy Associations                                       | [Video](#) | [Starter](#) | [Solution](#) |
 
 ## 1: Python Fundamentals
 ### Lecture Goals:
