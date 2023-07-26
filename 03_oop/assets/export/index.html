@@ -255,177 +255,104 @@
     
         <section >
             
-            <h4>OOP Design Principles</h4>
-
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <h4>How will objects help us going forward? 🚗</h4>
-
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <hr>
-<div style="display: flex; flex-direction: column;">
-  <div>
-    <img src="./Built-in-List-Functions-in-Python-01.jpg">
-  </div>
-  <div style="font-size: 1.5rem; margin: 0.85rem 1rem;">
-    Let's dive into the code! 🌊
-  </div>
-</div>
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <h3>Tuples–when values are forever 💎</h3>
+            <h4>OOP Design Principles 🧭</h4>
 <ul>
-<li>ordered collection of values</li>
-<li>aka sequence</li>
-<li><strong><em>immutable</em></strong></li>
+<li>single responsibility</li>
+<li>separation of concerns</li>
+<li>DRY</li>
+<li>domain modeling</li>
 </ul>
-<pre>
-  <code class="language-python">
-    my_tuple = (4, 2, "Miyuki", True)
-  </code>
-</pre>
+
             </section>
     
 
 
 
     
+    <section>
         <section >
-            
-            <img src="./Python-range-function-explained.webp" />
-<pre>
-  <code class="language-python">
-    for num in range(8):
-      print(f"The count is {num}")
-  </code>
-</pre>
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <h3>Dictionaries 📖 Python's JSON</h3>
-<h5>Creating dictionaries:</h5>
-<pre>
-  <code class="language-python">
-    cat_1 = {
-      'name': 'Simon',
-      'color': 'ginger',
-      'age': 10
-    }
-  </code>
-  <code class="language-python">
-    cat_2 = dict(name='Miyuki', color='grey', age=10)
-  </code>
-</pre>
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <h5>Reading and adding values 👓</h5>
-<pre><code class="language-python" data-line-numbers="1-5|6-7|8-9|10-11|12-13">cat_1 = {
-      'name': 'Simon',
-      'color': 'ginger',
-      'age': 10
-}
-cat_1['color']
-# => ginger
-cat_1.get('age')
-# => 10
-cat_1.get('mood')
-# => None
-cat_1['mood'] = 'hungry'
-cat_1.setdefault('breed', 'Munchkin')
-</code></pre>
-<h6 class="fragment">Let's try it! 🚀</h6>
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <h5>Updating and Deleting values 📝 ❌</h5>
-<pre><code class="language-python" data-line-numbers="1-6|7-10|11-14">cat_1 = {
-      'name': 'Simon',
-      'color': 'ginger',
-      'age': 10,
-      'mood': 'hungry'
-}
-cat_1['mood'] = 'sleepy'
-cat_1.update(age=11, mood='feisty')
-print(cat_1)
-# {'name': 'Simon', 'color': 'ginger', 'age': 11, 'mood': 'feisty'}
-del cat_1('age')
-cat_1.pop('mood')
-print(cat_1)
-# {'name': 'Simon', 'color': 'ginger'}
-</code></pre>
-<h6 class="fragment">Let's do it! 🛠️</h6>
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <h5><code>For</code> loops: let me reiterate 🐈🐈🐈</h5>
-<img src="./for-loop-in-python.webp" />
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <h4><code>break</code> keyword 🔑</h4>
-<div style="font-size: 1.5rem">
-In a loop, the <code>break</code> keyword escapes the loop, regardless of the iteration number. Once <code>break</code> executes, the program will continue to execute after the loop.
+            <h4>Single Responsibility</h4>
+<div style="display: flex;">
+  <div style="width: 50%">
+    <img src="./SingleResponsibility2.png" />
+  </div>
+  <div style="width: 50%">
+    <img src="./SingleResponsibility.png" />
+  </div>
 </div>
-<pre><code class="language-python">numbers = [0, 254, 2, -1, 3]
 
-for num in numbers:
-  if (num &lt; 0):
-    print(&quot;Negative number detected!&quot;)
-    break
-  print(num)
-  
-# 0
-# 254
-# 2
-# Negative number detected!
+            </section>
+        
+            <section >
+                <div style="display: flex;">
+  <div style="width: 45%">
+    <img src="./ExampleSingleReponsibility.png" />
+    <h5 class="fragment" style="color:red">Overloaded 🚫<h5>
+  </div>
+  <div style="width: 55%">
+    <img class="fragment" src="./ExampleSingleReponsibility1.png" />
+    <img class="fragment" src="./ExampleSingleReponsibility21.png" />
+    <h5 class="fragment" style="color:green">Classes separated to reduce complexity of our classes 👍</h5>
+  </div>
+</div>
+            </section>
+        
 
-</code></pre>
+    </section>
+    
 
+
+
+    
+    <section>
+        <section >
+            <h4>Separation of Concerns</h4>
+<ul>
+<li class="fragment">Supports high cohesion among components</li>
+<li class="fragment">Supports low coupling among components</li>
+<li class="fragment">Increases modularity</li>
+<li class="fragment">Increases maintainability</li>
+<li class="fragment">Increases reusability</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h5>Cohesion</h5>
+<img style="width: 75%" src='./cohesion-coupling.webp' />
+<ul>
+<li>cohesive components perform only one task</li>
+<li>cohesion is the internal glue that keeps a module together</li>
+<li>it is a measure fo the degree to which the elements in the module are functionally related</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <section data-background-color="mistyrose">
+  <h5>Coupling</h5>
+  <div style="display: flex;">
+  <div style="width: 50%">
+    <img src="./coupling-examples.webp" />
+  </div>
+  <div style="width: 50%">
+    <ul style="font-size: 1.5rem">
+      <li class='fragment'>good software has low coupling</li>
+      <li class='fragment'>coupling increases with the number of calls or the amount of data shared between modules</li>
+      <li class='fragment'>a design with high coupling will have more errors</li>
+      <li class='fragment'>it measures the degree of interdependence between modules</li>
+    </ul>
+  </div>
+</div>
+</section>
             </section>
     
 
@@ -434,21 +361,59 @@ for num in numbers:
     
         <section >
             
-            <h4><code>continue</code> keyword 🔑</h4>
-<div style="font-size: 1.5rem">
-In Python, a <code>while</code> loop will repeatedly execute a code block as long as a condition evaluates to <code>True</code>.
+            <h5>D.R.Y. 🌞🌵</h5>
+<iframe width="760" height="515" src="https://www.youtube.com/embed/8hOZe5oVzJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h4>Domain Modeling 📐</h4>
+<div style="display: flex;">
+  <div style="width: 40%; font-size: 2rem">
+    <p>A structured visual representation of interconnected concepts or real-world objects that incorporates vocabulary, key concepts, behavior, and relationships of all its entities.</p>
+  </div>
+  <div style="width: 60%">
+    <img src="./vehicles-domain.webp" />
+  </div>
 </div>
-<pre><code class="language-python">big_number_list = [1, 2, -1, 4, -5, 5, 2, -9]
-
-# Print only positive numbers:
-for i in big_number_list:
-  if i &lt; 0:
-    continue
-  print(i)
-
-</code></pre>
 
             </section>
+        
+            <section >
+                <img src="./bookshopclass.jpg" />
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h4>How will objects help us going forward? 🚗</h4>
+<div style="display: flex">
+  <div style="width: 50%" >
+    <img src="./pet_class.png" />
+  </div>
+  <div style="width: 50%">
+    <img src="./pets_table.png" />
+  </div>
+</div>
+
+            </section>
+        
+            <section >
+                <img src="./analogy.png" />
+            </section>
+        
+
+    </section>
     
 
 
@@ -456,31 +421,8 @@ for i in big_number_list:
     
         <section >
             
-            <h4><code>while</code> loops 🔍</h4>
-<div style="font-size: 1.5rem">
-In Python, the <code>continue</code> keyword is used inside a loop to skip the remaining code inside the loop code block and begin the next loop iteration.
-</div>
-<pre><code class="language-python">hunger = 5
-while hunger &gt; 0:
-  print('munch!')
-  hunger -= 1 # be sure to progress your condition towards the base case!
-# this will print 'munch!' 5 times
-
-</code></pre>
-
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <h4>List Comprehension 💡</h4>
-<div style="font-size: 1.5rem">
-List comprehension is a simpler method to create a list from an existing list. It is generally a list of iterables generated with an option to include only the items which satisfy a condition.
-</div>
-<img src="./list-comp-diagram.png" />
+            <section data-background-image="https://media.giphy.com/media/3oKGzEisePrzPMOWEo/giphy.gif" data-background-size="1200px">
+</section>
             </section>
     
 

@@ -138,191 +138,139 @@ xxx
 
 ---
 
-#### OOP Design Principles
+#### OOP Design Principles 🧭
+
+* single responsibility
+* separation of concerns
+* DRY
+* domain modeling
+
+---
+
+#### Single Responsibility
+
+<div style="display: flex;">
+  <div style="width: 50%">
+    <img src="./SingleResponsibility2.png" />
+  </div>
+
+  <div style="width: 50%">
+    <img src="./SingleResponsibility.png" />
+  </div>
+</div>
+
+xxx
+
+<div style="display: flex;">
+  <div style="width: 45%">
+    <img src="./ExampleSingleReponsibility.png" />
+    <h5 class="fragment" style="color:red">Overloaded 🚫<h5>
+  </div>
+
+  <div style="width: 55%">
+    <img class="fragment" src="./ExampleSingleReponsibility1.png" />
+    <img class="fragment" src="./ExampleSingleReponsibility21.png" />
+    <h5 class="fragment" style="color:green">Classes separated to reduce complexity of our classes 👍</h5>
+  </div>
+</div>
+
+---
+
+#### Separation of Concerns
+
+* Supports high cohesion among components {.fragment} 
+* Supports low coupling among components {.fragment}
+* Increases modularity {.fragment}
+* Increases maintainability {.fragment}
+* Increases reusability {.fragment}
+
+xxx
+
+<h5>Cohesion</h5>
+
+<img style="width: 75%" src='./cohesion-coupling.webp' />
+
+* cohesive components perform only one task
+* cohesion is the internal glue that keeps a module together
+* it is a measure fo the degree to which the elements in the module are functionally related
+
+---
+
+<section data-background-color="mistyrose">
+
+  <h5>Coupling</h5>
+
+  <div style="display: flex;">
+  <div style="width: 50%">
+    <img src="./coupling-examples.webp" />
+  </div>
+
+  <div style="width: 50%">
+    <ul style="font-size: 1.5rem">
+      <li class='fragment'>good software has low coupling</li>
+      <li class='fragment'>coupling increases with the number of calls or the amount of data shared between modules</li>
+      <li class='fragment'>a design with high coupling will have more errors</li>
+      <li class='fragment'>it measures the degree of interdependence between modules</li>
+    </ul>
+  </div>
+</div>
+
+</section>
+
+
+---
+
+##### D.R.Y. 🌞🌵
+
+<iframe width="760" height="515" src="https://www.youtube.com/embed/8hOZe5oVzJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
+
+#### Domain Modeling 📐
+
+<div style="display: flex;">
+  <div style="width: 40%; font-size: 2rem">
+    <p>A structured visual representation of interconnected concepts or real-world objects that incorporates vocabulary, key concepts, behavior, and relationships of all its entities.</p>
+  </div>
+
+  <div style="width: 60%">
+    <img src="./vehicles-domain.webp" />
+   
+  </div>
+</div>
+
+
+xxx
+
+<img src="./bookshopclass.jpg" />
+
 
 ---
 
 #### How will objects help us going forward? 🚗 
 
----
-
-
-___
-
-<div style="display: flex; flex-direction: column;">
-  <div>
-    <img src="./Built-in-List-Functions-in-Python-01.jpg">
+<div style="display: flex">
+  <div style="width: 50%" >
+    <img src="./pet_class.png" />
   </div>
 
-  <div style="font-size: 1.5rem; margin: 0.85rem 1rem;">
-    Let's dive into the code! 🌊
+  <div style="width: 50%">
+    <img src="./pets_table.png" />
   </div>
 </div>
 
+xxx
+
+<img src="./analogy.png" />
+
 ---
 
-<h3>Tuples–when values are forever 💎</h3>
+<section data-background-image="https://media.giphy.com/media/3oKGzEisePrzPMOWEo/giphy.gif" data-background-size="1200px">
+ 
 
-- ordered collection of values
-- aka sequence
-- **_immutable_**
-
-<pre>
-  <code class="language-python">
-    my_tuple = (4, 2, "Miyuki", True)
-  </code>
-</pre>
+</section>
 
 
 ---
 
-<img src="./Python-range-function-explained.webp" />
-<pre>
-  <code class="language-python">
-    for num in range(8):
-      print(f"The count is {num}")
-  </code>
-</pre>
-
----
-
-<h3>Dictionaries 📖 Python's JSON</h3>
-
-<h5>Creating dictionaries:</h5>
-<pre>
-  <code class="language-python">
-    cat_1 = {
-      'name': 'Simon',
-      'color': 'ginger',
-      'age': 10
-    }
-  </code>
-  <code class="language-python">
-    cat_2 = dict(name='Miyuki', color='grey', age=10)
-  </code>
-</pre>
-
----
-
-<h5>Reading and adding values 👓</h5>
-
-<pre><code class="language-python" data-line-numbers="1-5|6-7|8-9|10-11|12-13">cat_1 = {
-      'name': 'Simon',
-      'color': 'ginger',
-      'age': 10
-}
-cat_1['color']
-# => ginger
-cat_1.get('age')
-# => 10
-cat_1.get('mood')
-# => None
-cat_1['mood'] = 'hungry'
-cat_1.setdefault('breed', 'Munchkin')
-</code></pre>
-
-<h6 class="fragment">Let's try it! 🚀</h6>
-
----
-
-<h5>Updating and Deleting values 📝 ❌</h5>
-
-<pre><code class="language-python" data-line-numbers="1-6|7-10|11-14">cat_1 = {
-      'name': 'Simon',
-      'color': 'ginger',
-      'age': 10,
-      'mood': 'hungry'
-}
-cat_1['mood'] = 'sleepy'
-cat_1.update(age=11, mood='feisty')
-print(cat_1)
-# {'name': 'Simon', 'color': 'ginger', 'age': 11, 'mood': 'feisty'}
-del cat_1('age')
-cat_1.pop('mood')
-print(cat_1)
-# {'name': 'Simon', 'color': 'ginger'}
-</code></pre>
-
-<h6 class="fragment">Let's do it! 🛠️</h6>
-
----
-
-<h5><code>For</code> loops: let me reiterate 🐈🐈🐈</h5>
-
-<img src="./for-loop-in-python.webp" />
-
-
----
-
-#### `break` keyword 🔑
-
-<div style="font-size: 1.5rem">
-In a loop, the <code>break</code> keyword escapes the loop, regardless of the iteration number. Once <code>break</code> executes, the program will continue to execute after the loop.
-</div>
-
-
-```python
-numbers = [0, 254, 2, -1, 3]
-
-for num in numbers:
-  if (num < 0):
-    print("Negative number detected!")
-    break
-  print(num)
-  
-# 0
-# 254
-# 2
-# Negative number detected!
-
-```
-
----
-
-#### `continue` keyword 🔑
-
-<div style="font-size: 1.5rem">
-In Python, a <code>while</code> loop will repeatedly execute a code block as long as a condition evaluates to <code>True</code>.
-</div>
-
-
-```python
-big_number_list = [1, 2, -1, 4, -5, 5, 2, -9]
-
-# Print only positive numbers:
-for i in big_number_list:
-  if i < 0:
-    continue
-  print(i)
-
-```
-
----
-
-#### `while` loops 🔍
-
-<div style="font-size: 1.5rem">
-In Python, the <code>continue</code> keyword is used inside a loop to skip the remaining code inside the loop code block and begin the next loop iteration.
-</div>
-
-```python
-hunger = 5
-while hunger > 0:
-  print('munch!')
-  hunger -= 1 # be sure to progress your condition towards the base case!
-# this will print 'munch!' 5 times
-
-```
-
----
-
-#### List Comprehension 💡
-
-<div style="font-size: 1.5rem">
-List comprehension is a simpler method to create a list from an existing list. It is generally a list of iterables generated with an option to include only the items which satisfy a condition.
-</div>
-
-<img src="./list-comp-diagram.png" />
-
----
 
