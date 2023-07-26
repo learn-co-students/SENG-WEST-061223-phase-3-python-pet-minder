@@ -190,9 +190,14 @@ xxx
 
 <img style="width: 75%" src='./cohesion-coupling.webp' />
 
+<div style="font-size: 1.5rem">
+
 * cohesive components perform only one task
 * cohesion is the internal glue that keeps a module together
-* it is a measure fo the degree to which the elements in the module are functionally related
+* it is a measure of the degree to which the elements in the module are functionally related
+
+</div>
+
 
 ---
 
