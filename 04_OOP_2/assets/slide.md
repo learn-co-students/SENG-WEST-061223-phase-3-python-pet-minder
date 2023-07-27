@@ -149,3 +149,131 @@ xxx
 
 #### Object Inheritance
 
+<div style="display: flex">
+  <div style="width: 45%">
+    <img src="./Python-Object-Oriented-Programming-Inheritance-Schema.png" />
+  </div>
+  <div style="width: 55%; text-align: left; font-size: 2rem">
+    <ul>
+      <li>Just as we've extended the functionality of methods with decorators</li>
+      <li class='fragment'>We can extend the functionality of a class with inheritance</li>
+      <li class='fragment'>Inheritance let's us create a family of classes which share traits</li>
+      <li class='fragment'>While still keeping our code DRY</li>
+    </ul>
+  </div>
+</div>
+
+---
+
+<img src="./inheritance_example.png" />
+<p>Heirarchical inheritance with common and differentiated attributes</p>
+
+---
+
+<img src="./Types-of-Inheritance.jpg" />
+
+---
+
+#### Method overriding
+
+```python
+class Vehicle:
+    def vehicle_info(self):
+        print("Inside Vehicle Class")
+
+    def max_speed(self):
+        print("max speed is 100 Km/Hour")
+
+
+class Car(Vehicle):
+    def car_info(self):
+        print("Inside Car Class")
+
+    # overridden the implementation of Vehicle class
+    def max_speed(self):
+        print("max speed is 200 Km/Hour")
+```
+
+xxx
+
+```python
+# Creating object of Car class
+car = Car()
+car.vehicle_info() # => "Inside Vehicle Class"
+car.car_info() # => "Inside Car Class"
+car.max_speed() # => "max speed is 200 Km/Hour"
+```
+
+---
+
+#### `super()` method
+
+The super function returns a temporary object of the parent class that allows us to call a parent class method inside a child class method.
+
+##### Benefits of using the `super()` function
+
+- We are not required to remember or specify the parent class name to access its methods. {.fragment}
+- We can use the `super()` function in both single and multiple inheritances. {.fragment}
+- The `super()` function support code reusability as there is no need to write the entire function {.fragment}
+
+xxx
+
+```python
+class Company:
+    def company_name(self):
+        return 'Google'
+
+class Employee(Company):
+    def info(self):
+        # Calling the superclass method using super()function
+        c_name = super().company_name()
+        print("Jessa works at", c_name)
+
+# Creating object of child class
+emp = Employee()
+emp.info()
+```
+
+### Let's do it! 🏃‍♂️ {.fragment}
+
+---
+
+<img src="./01-one-to-many-pants.jpg" />
+
+---
+
+<img src="./02-one-to-many-doctors.jpg"/>
+
+---
+
+<img src="./03-one-to-many-patients.jpg"/>
+
+---
+
+<img src="./04-many-to-many-appts.jpg"/>
+
+---
+
+<img src="./05-one-to-many-pizzas.jpg"/>
+
+---
+
+<img src="./06-one-to-many-customers.jpg"/>
+
+---
+
+<img src="./07-many-to-many-meals.jpg"/>
+
+---
+
+<img src="./08-many-to-many-pet-handlers.jpg"/>
+
+---
+
+- A sale may have multiple coupons but a coupon can only be used on one sale at a time.
+- A person can have one or more family members, a family can have any number of people. {.fragment}
+- A book is assigned to one library at a time but a library holds a bunch of books {.fragment}
+- A fan can go to multiple concerts and a concert can have multiple fans  {.fragment}
+
+
+
