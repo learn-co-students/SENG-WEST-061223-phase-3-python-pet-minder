@@ -100,3 +100,52 @@ xxx
 <img src="./create_and_access_class_variable.webp" >
 
 <p>Every object instantiated from the class has read and write access to its class variables.</p>
+
+---
+
+<section>
+    <pre><code class="language-python" data-trim data-noescape data-line-numbers="1-2|1-3">
+      class Pet:
+        total_pets = 0
+        all = []
+    </code></pre>
+    <ul>
+      <li>class variables are espcially useful for tracking cumulative data about all of the objects instantiated</li>
+      <li class="fragment">a list can even be used to keep a reference to every object itself!</li>
+    </ul>
+   
+</section>
+
+---
+
+### Class Methods
+
+#### What about behaviors that are universal to the class?
+
+<img src="./class_method.webp" />
+
+---
+
+<section>
+    <pre><code class="language-python" data-trim data-noescape data-line-numbers="4-6">
+      class Pet:
+        total_pets = 0
+        all = []
+        @classmethod
+        def add_to_total_pets(cls):
+          cls.total_pets += 1
+    </code></pre>
+    <pre><code class="language-python" data-trim data-noescape data-line-numbers="1-2|1-3">
+      Pet.add_to_total_pets()
+    </code></pre>
+    <ul>
+      <li>Just as we can give a class attributes with class variables, we can also give it behavior with class methods.</li>
+      <li class="fragment">these methods often update the values of the class variables in some way</li>
+    </ul>
+    <h5 class="fragment">Let's get hacking! 🕶️</h5>
+</section>
+
+---
+
+#### Object Inheritance
+
