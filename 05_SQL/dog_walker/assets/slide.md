@@ -11,17 +11,26 @@ presentation:
 
 ---
 
-# Intro to Databases
+### Intro to Databases
 
-## Putting Things in Context.
-
-Databases allow us to store and perform CRUD actions on data outside of our code before allowing our changes persist to the next session.
+![sql_lite](./sqlite-logo-svg-transparent-vec.png)
 
 ---
 
-## ORM Analogy
+#### Putting Things in Context.
 
-![ORM Analogy](https://res.cloudinary.com/dnocv6uwb/image/upload/v1651161995/Flatiron%20Slideshow%20images/analogy.drawio.svg)
+Databases allow us to store and perform CRUD actions on data outside of our code therefore allowing our changes to persist to the next session.
+
+---
+
+#### ORM Analogy
+
+<div style="width: 65%">
+  
+  ![ORM Analogy](https://res.cloudinary.com/dnocv6uwb/image/upload/v1651161995/Flatiron%20Slideshow%20images/analogy.drawio.svg)
+
+</div>
+
 
 ---
 
@@ -31,49 +40,60 @@ Databases allow us to store and perform CRUD actions on data outside of our code
 
 ---
 
-## The Flow
+### The Flow
 
-At the end of the phase, we'll be building out an API that will sit between our React app and our database:
+At the end of the phase, we'll be building out our own API that will sit between our React app and our database, enacting the following data flow:
 
-- React App
-- Fetch to API
-- API interacts with database and sends response back to Browser
-- Resolved promise from fetch leads to change in state
-- React updates the DOM
+- React App  {.fragment }
+- Fetches to API {.fragment }
+- API interacts with database and sends response back to the browser/client {.fragment }
+- Resolved Promise from fetch leads to change in state {.fragment }
+- React updates the DOM {.fragment }
 
 ---
 
-## Database Examples
+### Database Examples
 			
-### Whats wrong with this table?						
-![bad-data-1](./bad-data-1.png)
+#### Whats wrong with this table?		
+
+<div style="width: 70%">
+
+  ![bad-data-1](./bad-data-1.png)
+  
+</div>
 
 ---
 
-### Whats wrong with this table?						
+#### Whats wrong with this table?						
 ![bad-data-2](./bad-data-2.png)
 
 ---
 
-### Correct table
-![first_normal_form](./first_normal_form.png)
+#### Correct table
+
+<div style="width: 50%">
+
+  ![first_normal_form](./first_normal_form.png)
+
+</div>
 
 ---
 
-### one-to-many
+#### one-to-many
 
 ![one-to-many](./one-to-many.png)
 
 ---
 
-# many-to-many
+#### many-to-many
+
 ![many-to-many](./many-to-many.png)
 
 ---
 
-## Rover Clone
+### Pet Minder/Rover Clone
 
-### Key Features:
+#### Key Features:
 
 - Add persistence
   - A Read (SELECT) operation to retrieve persisted pets
@@ -83,26 +103,33 @@ At the end of the phase, we'll be building out an API that will sit between our 
 
 ---
 
-The following slides outline the configuration changes necessary to integrate a SQLite database into our application.
 
+### DB Config
+
+Check for prior installation of `sqlite`
+
+```bash
+which sqlite3
+```
+If not installed, you can install it on MacOS with Homebrew:
+```bash
+brew install sqlite
+```
+or for Windows, go to this [link](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-sqlite)
 
 ---
 
-## DB Config
+### GUI with your SQLite databases
 
-### Add sqlite3 gem to Gemfile
+Install [DB Browser for SQLite](https://sqlitebrowser.org/) Mac/Windows/Linux
 
-```bash
-bundle add sqlite3
-```
+[SQLite VSCode Extension](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite) OR
+[SQLite Viewer](https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer)
 
-Install [DB Browser for SQLite](https://sqlitebrowser.org/)
-
-WSL [Using SQLite with VS Code Extension](https://www.youtube.com/watch?v=bKixKfb1J1o)
+- WSL [Using SQLite with VS Code Extension](https://www.youtube.com/watch?v=bKixKfb1J1o)
   - Right click DB and select "Open database"
   - In SQLite Explorer, right click the Database and select "New query"
   - Write the query, highlight the query, click right and select "Run query"
-
 
 ---
 
@@ -113,14 +140,17 @@ SQLite is a library that will allow us to create relational SQL databases.
 
 A relational database is a database of tables and rows with data points that relate to one another. Tables have unique Primary keys and columns that contain data of varying types.
 
-
+---
 
 #### Delete Tables
+
+```sql
 DROP TABLE dogs;
+```
 
 #### Create the Tables for pets and owners 
 
-```
+```sql
 CREATE TABLE owners(
   id INTEGER PRIMARY KEY,
   name TEXT,
@@ -143,10 +173,11 @@ CREATE TABLE pets(
 );
 ```
 
+---
 
 ### Update Table
 
-```
+```sql
 ALTER TABLE pets
 ADD COLUMN image_url TEXT;
 
@@ -155,21 +186,22 @@ RENAME COLUMN birthdate TO age;
 
 ```
 
+---
+
 ### Add Data to Table
-```
+
+```sql
 INSERT INTO owners(name, address, email, phone) 
 VALUES ('ix', '999 8th st Seattle Wa 90000', 'ix_is_cool@gmail.com', '9991231234');
 
 INSERT INTO owners(name, address, email, phone) 
 VALUES ('Adam', '000 dr sw San Francisco CA 90000', 'cyberpunk999@gmail.com', '0001239999');
 
-
 INSERT INTO pets(name, age, breed, favorite_treats, image_url, owner_id) 
 VALUES ('Luke', '2', 'domestic longhair', 'bacon', 'https://res.cloudinary.com/dnocv6uwb/image/upload/v1631229064/zx6CPsp_d_utkmww.webp', 2);
 
 INSERT INTO pets(name, age, breed, favorite_treats, image_url, owner_id) 
 VALUES ('rose', '11', 'domestic longhair', 'house plants', 'https://res.cloudinary.com/dnocv6uwb/image/upload/v1631229038/EEE90-E50-25-F0-4-DF0-98-B2-0-E0-B6-F9-BAA89_menwgg.jpg', 1);
-
 
 INSERT INTO pets(name, age, breed, favorite_treats, image_url, owner_id) 
 VALUES ('leia', '2', 'domestic Shorthair', 'bacon', 'https://res.cloudinary.com/dnocv6uwb/image/upload/v1631229011/8136c615d670e214f80de4e7fcdf8607--cattle-dogs-mans_vgyqqa.jpg', 2);
@@ -179,9 +211,11 @@ VALUES ('Chop', '5', 'shiba inu', 'cheese', 'https://res.cloudinary.com/dnocv6uw
 
 ```
 
+---
+
 ### Query Table Data
 
-```
+```sql
 SELECT * FROM pets
 
 SELECT * FROM pets 
@@ -205,19 +239,29 @@ DELETE FROM pets WHERE name = 'Chop';
 
 ```
 
+---
+
 #### Join Tables
+
+![types-of-joins](./Types-of-Joins-in-SQl.webp)
+
+---
 
 #### one-to-many
 
-```
+```sql
 SELECT pets.name, owners.name as 'owner'
 FROM pets
 JOIN owners ON pets.owner_id = owners.id;
 ```
 
+---
+
 #### many-to-many
 
-```
+##### CREATE table
+
+```sql
 CREATE TABLE handlers(
   id INTEGER PRIMARY KEY,
   name TEXT,
@@ -225,9 +269,7 @@ CREATE TABLE handlers(
   phone INTEGER
 );
 
-
-
-CREATE TABLE appointments(
+CREATE TABLE jobs(
   id INTEGER PRIMARY KEY,
   time DATETIME,
   request TEXT,
@@ -236,53 +278,58 @@ CREATE TABLE appointments(
   FOREIGN KEY (handler_id) REFERENCES handlers(id),
   FOREIGN KEY (pet_id) REFERENCES pets(id)
 );
+```
 
+---
 
+##### Create new records
+
+```sql
 INSERT INTO handlers (name, email, phone) 
 VALUES ('gannie', 'grannie52@gmail.com', '1239087654');
+
 INSERT INTO handlers (name, email, phone) 
 VALUES ('dorian', 'blue_boy@gmail.com', '8887776666');
 
-
-
-
-
-INSERT INTO appointments (time, request, pet_id, handler_id) 
+INSERT INTO jobs (time, request, pet_id, handler_id) 
 VALUES ('2022-07-31 00:00:00', 'drop-in', 1,1);
 
-INSERT INTO appointments (time, request, pet_id, handler_id) 
+INSERT INTO jobs (time, request, pet_id, handler_id) 
 VALUES ('2022-03-01 00:00:00', 'drop-in', 1,1);
 
-INSERT INTO appointments (time, request, pet_id, handler_id) 
+INSERT INTO jobs (time, request, pet_id, handler_id) 
 VALUES ('2022-06-01 00:00:00', 'drop-in', 1,2);
 
-INSERT INTO appointments (time, request, pet_id, handler_id) 
+INSERT INTO jobs (time, request, pet_id, handler_id) 
 VALUES ('2022-05-21 00:00:00', 'walk', 2,2);
+```
 
+---
 
+##### READ associated records through joins
+
+```sql
 SELECT
   pets.name,
   handlers.name,
-  appointments.request,
-  appointments.time
-FROM appointments
+  jobs.request,
+  jobs.time
+FROM jobs
 JOIN pets
-  ON appointments.pet_id = pets.id
+  ON jobs.pet_id = pets.id
 JOIN handlers
-  ON appointments.handler_id = handlers.id;
+  ON jobs.handler_id = handlers.id;
 
 
 SELECT DISTINCT
   pets.name,
   handlers.name
-FROM appointments
+FROM jobs
 JOIN pets
-  ON appointments.pet_id = pets.id
+  ON jobs.pet_id = pets.id
 JOIN handlers
-  ON appointments.handler_id = handlers.id
+  ON jobs.handler_id = handlers.id
 AND pets.name = 'Luke';
-
-
 
 ```
 
