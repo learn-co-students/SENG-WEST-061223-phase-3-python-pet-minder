@@ -13,9 +13,9 @@
     - Demonstrate configuring an application to use Alembic 
     - Demonstrate creating migrations using Alembic
     - Demonstrate creating manual migrations using Alembic
-    - Demonstrate CRUD in SQLAlcehmy
-        - Adding data with .commit
-            - `.all`, `.order_by`, `desc`, `limit`, `funcfilter`, and loop compression to grab specific columns 
-        - Querying data with `.query`
-        - Updating data with `.update` and `.commit`
-        - Deleting data with `.delete`
+- Demonstrate CRUD in SQLAlcehmy
+    - Adding data with .commit
+        - `.all`, `.order_by`, `desc`, `limit`, `funcfilter`, and loop compression to grab specific columns 
+    - Querying data with `.query`
+    - Updating data with `.update` and `.commit`
+    - Deleting data with `.delete`

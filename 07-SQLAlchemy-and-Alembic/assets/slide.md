@@ -3,7 +3,7 @@ theme : "night"
 transition: "slide"
 highlightTheme: "monokai"
 slideNumber: false
-title: "P3L3 - Object-Oriented Programming in Python"
+title: "P3L7 - SQLAlchemy & Alembic"
 verticalSeparator: 'xxx'
 presentation:
     width: 1500
@@ -11,46 +11,63 @@ presentation:
 
 ---
 
-<h2>Object-Oriented Programming in Python</h2>
+<h2>SQLAlchemy & Alembic</h2>
 <img alt="python logo" src="./python-logo-only.png"/>
 
 ---
 
 <h3><strong> ✅ Objectives </strong></h3>
 
-* Define Object-Oriented Programming
-* Understand the benefits of OOP
-* Build Classes
-* Create instances of those classes
-* Use `__init__` to instantiate objects with attribute values
-
-xxx
-
-* Add instance methods to our classes
-* Understand the use of the `self`` keyword in instances
-* Know the principles of OO Design
-* Stretch: object properties, mass assignment
+* Understand what SQLAlchemy is and how it's beneficial as an ORM
+* Know how to create a database with SQLAlchemy
+* Create schema
+* Understand what Alembic is and how it works with SQLAlchemy
+* Configure an app to use Alembic
+* Create and apply migrations
+* Execute full CRUD using SQLAlchemy
 
 ---
 
-<h3>What is OOP? 🤔</h3>
+### What is SQLAlchemy?
 
-<div style="font-size: 1.8rem" >
-
-* a programming paradigm  
-* seeks to encapsulate information and it's related behaviors together as objects
-* models concepts and objects in the real world. 
-* easier to reason about and solve problems involving those data, 
-* facilitates structuring our programs in ways that can share and reuse these objects.
-* contrast to Procedural Programming, 
-  * written in sequential order and 
-  * procedures are called when behaviour needs to be shared between pages in an application.
-</div>
-
+> "SQLAlchemy is the Python SQL  toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL."
 
 ---
 
-<img src="./OOPConcept.jpg" style="width: 900px">
+### What is a **schema**?
+
+A **schema** is the blueprint of a database. It describes how data relates to other data in tables, columns, and the relationships between
+
+---
+
+### What is an **engine**?
+
+An **engine** is a Python object that translates SQL to Python and vice-versa.
+
+---
+
+### What is a **session**?
+
+A Python object that uses an engine to allow us to programmatically interact with a database.
+
+---
+
+### What is a **transaction**?
+
+A strategy for executing database statements such that the group suceeds or fails as a unit.
+
+---
+
+### What is **Alembic**?
+
+A database migration tool written by the author of SQLAlchemy
+
+---
+
+### What is a schema **migration**?
+
+A controlled, incremental and reversible change to a relational database's schema.  A set of migrations can be applied to a database, or rolled back in a sequential and granular fashion.
+
 
 ---
 
