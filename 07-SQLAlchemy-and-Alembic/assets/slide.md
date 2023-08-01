@@ -48,11 +48,66 @@ xxx
 
 A **schema** is the blueprint of a database. It describes how data relates to other data in tables, columns, and the relationships between
 
+We define our schema with Python classes we will call "models".
+
+---
+
+First we import the elements we'll need from SQLAlchemy...
+
+```python
+from sqlalchemy import Column, Integer, PrimaryKeyConstraint, String
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
+```
+
+---
+
+Then we create a model class which inherits the ORM functionality from the Base class.
+
+```python[1|2|4|5-8]
+class Pet(Base):
+    __tablename__ = "pets"
+
+    id = Column(Integer(), primary_key=True)
+    name = Column(String())
+    species = Column(String())
+    breed = Column(String())
+    temperament = Column(String())
+```
+
+---
+
+For debugging and readability, let's add a `__repr__()` to our model!
+
+```python
+class Pet(Base):
+
+  # (...model logic...)
+
+  def __repr__(self):
+    return (
+            f"Id: {self.id}, "
+            + f"Name:{self.name}, "
+            + f"Species {self.species}, "
+            + f"Breed {self.breed}, "
+            + f"Species {self.temperament}"
+        )
+
+```
+#### Let's jump into the code! {.fragment}
+
 ---
 
 ### What is an **engine**?
 
-An **engine** is a Python object that translates SQL to Python and vice-versa.
+In SQLAlchemy, an **engine** is a Python object that translates SQL to Python and vice-versa.
+It is similar to our `connection` object in `sqlite3`.
+We'll need an engine to apply our schema to our database.
+
+---
+
+
 
 ---
 
