@@ -32,6 +32,7 @@ class Pet(Base):
     # 1.a✅ Add  ForeignKey('owners.id') to owner)id
     owner_id = Column(Integer(), ForeignKey("owners.id"))
     # owner = relationship("Owner", backref=backref("pets"))
+    jobs = relationship("Job", backref=backref("job"))
 
     def __repr__(self):
         return (
@@ -105,7 +106,7 @@ class Handler(Base):
     phone = Column(Integer())
     hourly_rate = Column(Float())
 
-    jobs = relationship("Job", backref=backref("job"))
+    # jobs = relationship("Job", backref=backref("job"))
 
     # add a __repr__ method that returns a string containing the id, name, email, phone and hourly_rate of our class
     def __repr__(self):
@@ -140,8 +141,8 @@ class Job(Base):
     handler_id = Column(Integer(), ForeignKey("handlers.id"))
 
     # Associate the models with relationship(<ModelNameHere>, backref=backref(<TableNameHere>))
-    pet = relationship("Pet", backref=backref("pets"))
-    # handler = relationship("Handler", backref=backref("handlers"))
+    # pet = relationship("Pet", backref=backref("pets"))
+    handler = relationship("Handler", backref=backref("handlers"))
 
     # add a __repr__ method that returns a string containing the id, request, date, notes, fee, pet_id and handler_id of our class
     def __repr__(self):
