@@ -1,28 +1,15 @@
 from datetime import datetime
 
-from models import Handler, Job, Pet
+from handler import Handler
+from job import Job
 from pick import pick
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-
-engine = create_engine("sqlite:///pet_app.db")
-session = sessionmaker(bind=engine)()
-# Define model operations
-
-
-def get_all_pets():
-    return session.query(Pet).all()
-
-
-def find_pet_by_id(id):
-    return session.get(Pet, id)
 
 
 def add_job_to_pet(pet):
-    handler_names = [handler.name for handler in session.query(Handler).all()]
+    handler_names = Handler.get_all_handler_names()
     title = "Which handler will be taking care of this job?"
     handler_name, index = pick(handler_names, title)
-    handler = session.query(Handler).filter(Handler.name == handler_name).first()
+    handler = Handler.find_handler_by_name(handler_name)
     req_type = "What type of job are you requesting?"
     request_choice, index = pick(["Walk", "Drop-in", "Boarding"], req_type)
     date_string = input("Enter date and time in the format YYYY-MM-DD HH:MM:SS: ")
@@ -36,8 +23,7 @@ def add_job_to_pet(pet):
         notes=notes,
         fee=handler.hourly_rate,
     )
-    session.add(job)
-    session.commit()
+    job.save()
 
 
 def add_pet():

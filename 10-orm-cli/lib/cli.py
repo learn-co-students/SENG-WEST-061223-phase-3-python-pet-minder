@@ -1,4 +1,7 @@
+from handler import Handler
 from helpers import *
+from job import Job
+from pet import Pet
 from prompt_toolkit import prompt
 from rich import print
 
@@ -28,7 +31,7 @@ def get_main_choice():
 
 
 def display_all_pets():
-    pets = get_all_pets()
+    pets = Pet.get_all_pets()
     for pet in pets:
         print(f"{pet.id} | {pet.name} | {pet.species} |")
     print("What would you like to do?")
@@ -60,10 +63,10 @@ def handle_pet_choice(choice, pet):
 
 
 def show_pets_jobs(pet):
-    jobs = pet.jobs
+    jobs = Job.get_jobs_by_pet_id(pet.id)
     for job in jobs:
         print(
-            f"{job.id} | {job.request} | {job.date} | {job.notes} | ${job.fee:.2f} || with {job.handler.name}"
+            f"{job.id} | {job.request} | {job.date} | {job.notes} | ${job.fee:.2f} || with {Handler.find_handler_by_id(job.handler_id).name}"
         )
 
 
@@ -75,7 +78,7 @@ def add_job(pet):
 
 def choose_pet_by_id():
     search_id = input("Enter the id of the pet you'd like to see")
-    pet = find_pet_by_id(search_id)
+    pet = Pet.find_pet_by_id(search_id)
     print(
         f"Id: {pet.id}, Name: {pet.name}, Species: {pet.species}, Breed: {pet.breed}, Temperament: {pet.temperament}"
     )

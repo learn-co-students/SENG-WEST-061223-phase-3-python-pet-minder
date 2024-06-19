@@ -1,20 +1,22 @@
 import random
+import sqlite3
 
 from faker import Faker
-from models import Handler, Job, Owner, Pet
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from handler import Handler
+from job import Job
+from owner import Owner
+from pet import Pet
 
 if __name__ == "__main__":
-    engine = create_engine("sqlite:///pet_app.db")
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    # 2.a ✅ Add delete methods for Pet and Owner to clear the database before each seeding
 
-    # ----------
-    # 5.✅ Add Delete methods for Job and Handler
-    session.query(Pet).delete()
-    session.query(Owner).delete()
+    Job.drop_table()
+    Pet.drop_table()
+    Handler.drop_table()
+    Owner.drop_table()
+    Handler.create_table()
+    Owner.create_table()
+    Pet.create_table()
+    Job.create_table()
 
     # Initialize faker
     fake = Faker()
@@ -55,11 +57,7 @@ if __name__ == "__main__":
             phone=random.randint(1000000000, 9999999999),
             address=fake.address(),
         )
-
-        # Use .add and .commit to save the owner one at a time, so we maintain the owner ID in our instance.
-        session.add(owner)
-        session.commit()
-        # Append the owner to the owners list
+        owner.save()
         owners.append(owner)
 
     # Create an empty pets list
@@ -73,19 +71,16 @@ if __name__ == "__main__":
             pet = Pet(
                 name=fake.name(),
                 species=rand_species,
-                breed=random.choice(cat_breeds)
-                if rand_species == "CAT"
-                else random.choice(dog_breeds),
+                breed=(
+                    random.choice(cat_breeds)
+                    if rand_species == "CAT"
+                    else random.choice(dog_breeds)
+                ),
                 temperament=random.choice(temperament),
                 owner_id=owner.id,
             )
-            # Use .add and .commit to save the pet to the database
-            session.add(pet)
-            session.commit()
-            # Append the pet to the pets list
+            pet.save()
             pets.append(pet)
-    # 3✅ run the seed file and head over to debug.py to test out your one to many
-    # -----------------------------------------------------
 
     # 5.✅ Create a empty list set to handlers
     handlers = []
@@ -98,9 +93,7 @@ if __name__ == "__main__":
             phone=random.randint(1000000000, 9999999999),
             hourly_rate=random.uniform(25.50, 80.50),
         )
-        # Use .add and .commit to save the handler to the database
-        session.add(handler)
-        session.commit()
+        handler.save()
         # Append handler to handlers
         handlers.append(handler)
     # Create an list of requests, "Walk", "Drop-in" and "Boarding"
@@ -122,10 +115,8 @@ if __name__ == "__main__":
                 pet_id=random.choice(pets).id,
             )
             # append the job to the jobs list
+            job.save()
             jobs.append(job)
-    # Bulk save the jobs (we wont need their id)
-    session.bulk_save_objects(jobs)
-    session.commit()
-    session.close()
+
 
 # 6.✅ Run the seeds file and head over to debug.py to test out your Many to Many
